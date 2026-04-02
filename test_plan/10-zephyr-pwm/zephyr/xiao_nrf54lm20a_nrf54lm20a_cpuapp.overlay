@@ -1,0 +1,57 @@
+&blue_led {
+    status = "disabled";
+};
+
+&red_led {
+    status = "disabled";
+};
+
+&green_led {
+    status = "disabled";
+};
+
+&pwm20 {
+    status = "okay";
+    pinctrl-0 = <&pwm20_d0_default>;
+    pinctrl-1 = <&pwm20_d0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&gpio1 {
+    blue_led_off: blue_led_off {
+        gpio-hog;
+        gpios = <22 GPIO_ACTIVE_HIGH>;
+        output-high;
+        line-name = "blue-led-off";
+    };
+
+    red_led_off: red_led_off {
+        gpio-hog;
+        gpios = <23 GPIO_ACTIVE_HIGH>;
+        output-high;
+        line-name = "red-led-off";
+    };
+
+    green_led_off: green_led_off {
+        gpio-hog;
+        gpios = <24 GPIO_ACTIVE_HIGH>;
+        output-high;
+        line-name = "green-led-off";
+    };
+};
+
+&pinctrl {
+    pwm20_d0_default: pwm20_d0_default {
+        group1 {
+            /* XIAO D0 = P1.0 */
+            psels = <NRF_PSEL(PWM_OUT0, 1, 0)>;
+        };
+    };
+
+    pwm20_d0_sleep: pwm20_d0_sleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 0)>;
+            low-power-enable;
+        };
+    };
+};

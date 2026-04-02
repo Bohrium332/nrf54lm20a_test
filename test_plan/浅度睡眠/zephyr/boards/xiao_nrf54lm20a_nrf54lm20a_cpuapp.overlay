@@ -1,0 +1,41 @@
+/* Enable external flash for DPD suspend */
+&py25q64 {
+	status = "okay";
+};
+
+/* Disable unused peripherals to minimize idle current */
+&uart21 {
+	status = "disabled";
+};
+
+&spi23 {
+	status = "disabled";
+};
+
+&i2c22 {
+	status = "disabled";
+};
+
+&i2c30 {
+	status = "disabled";
+};
+
+&adc {
+	status = "disabled";
+};
+
+&radio {
+	status = "disabled";
+};
+
+&nfct {
+	status = "disabled";
+};
+
+&usbhs {
+	status = "disabled";
+};
+
+&temp {
+	status = "disabled";
+};

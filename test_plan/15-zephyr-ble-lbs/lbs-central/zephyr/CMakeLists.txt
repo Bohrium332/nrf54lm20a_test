@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+cmake_minimum_required(VERSION 3.13.1)
+
+if(NOT DEFINED BOARD_ROOT)
+  set(SEEED_PLATFORM_BOARD_ROOT "$ENV{ZEPHYR_BASE}/../../platforms/Seeed Studio/zephyr")
+  if(EXISTS "${SEEED_PLATFORM_BOARD_ROOT}/boards")
+    set(BOARD_ROOT "${SEEED_PLATFORM_BOARD_ROOT}")
+  endif()
+endif()
+
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+project(ble-lbs-central)
+
+target_sources(app PRIVATE ../src/main.c)

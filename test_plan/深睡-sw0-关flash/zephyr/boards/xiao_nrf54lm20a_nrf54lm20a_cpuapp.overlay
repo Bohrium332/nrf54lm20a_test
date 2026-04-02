@@ -1,0 +1,14 @@
+/*
+ * PY25Q64HA-UXH-IR wiring on XIAO nRF54LM20A
+ * CS   -> P2.05
+ * IO0  -> P2.02 (MOSI)
+ * IO1  -> P2.04 (MISO)
+ * IO2  -> P2.03 (WP#)
+ * IO3  -> P2.00 (HOLD#)
+ * CLK  -> P2.01
+ */
+
+&py25q64 {
+	status = "okay";
+	// hold-gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
+};

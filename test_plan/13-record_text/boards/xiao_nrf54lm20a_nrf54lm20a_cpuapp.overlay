@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2026
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+/*
+ * Route the NFCT peripheral to the XIAO nRF54LM20A antenna pins:
+ * P1.01/NFC1 and P1.02/NFC2.
+ */
+// &nfct {
+// 	status = "okay";
+// };

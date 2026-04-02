@@ -1,0 +1,17 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "GRTC Wakeup Demo"
+
+config GPIO_WAKEUP_ENABLE
+	bool "Use button to wake up device from system off"
+	default y
+	help
+	  Enable system off wakeup from pressing sw0 button.
+
+config GRTC_WAKEUP_ENABLE
+	bool "Use GRTC to wake up device from system off"
+	help
+	  Enable system off wakeup from GRTC.
+
+source "Kconfig.zephyr"
